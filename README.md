@@ -13,13 +13,6 @@ Aplicación CRUD completa para gestión de empleados utilizando las últimas tec
 - **Modales dinámicas** - Para crear, editar y ver detalles
 - **Subida de archivos** - Gestión de avatares de empleados
 
-## 🛠️ Requisitos
-
-- PHP 8.2+
-- Composer
-- MySQL
-- Servidor web (Apache/Nginx)
-
 ## 🚀 Instalación
 
 1. **Clonar el repositorio**
@@ -61,33 +54,6 @@ Aplicación CRUD completa para gestión de empleados utilizando las últimas tec
 - ✅ **Actualizar** datos mediante modal de edición
 - ✅ **Eliminar** con confirmación en modal
 
-### Características Técnicas
-- 🔄 **Sin recargas de página** - Todas las operaciones usan HTMX
-- 📱 **Responsive** - Diseño adaptable a todos los dispositivos
-- 🖼️ **Gestión de avatares** - Subida y visualización de imágenes
-- ⚡ **Navegación rápida** - Interfaz fluida y moderna
-- 🎨 **Bootstrap 5** - Componentes y estilos modernos
-
-## 📁 Estructura del Proyecto
-
-```
-app/
-├── Http/Controllers/EmpleadosController.php
-├── Models/Empleados.php
-resources/views/
-├── layouts/app.blade.php
-├── empleados/
-│   ├── index.blade.php
-│   ├── add.blade.php
-│   ├── edit.blade.php
-│   └── table-rows.blade.php
-└── modals/
-    ├── empleado-show-modal.blade.php
-    ├── empleado-edit-modal.blade.php
-    └── confirm-delete-modal.blade.php
-public/js/modal-handler.js
-```
-
 ## 🚀 Uso
 
 1. Accede a `http://localhost:8000`
@@ -96,5 +62,13 @@ public/js/modal-handler.js
 4. Usa "Editar" para modificar datos existentes
 5. "Eliminar" muestra confirmación antes de borrar
 
+## 🙌 Cómo puedes apoyar 📢:
 
-*Proyecto desarrollado con las mejores prácticas de desarrollo web moderno* 🚀
+✨ **Comparte este proyecto** con otros desarrolladores para que puedan beneficiarse 📢.
+☕ **Invítame un café o una cerveza 🍺**:
+   - [Paypal](https://www.paypal.me/iamdeveloper86) (`iamdeveloper86@gmail.com`).
+
+### ⚡ ¡No olvides SUSCRIBIRTE a la [Comunidad WebDeveloper](https://www.youtube.com/WebDeveloperUrianViera?sub_confirmation=1)!
+#### ⭐ **Déjanos una estrella en GitHub**:
+   - Dicen que trae buena suerte 🍀.
+**Gracias por tu apoyo 🤓.**
