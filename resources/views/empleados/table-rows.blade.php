@@ -19,8 +19,8 @@
                 <ul class="flex_acciones list-unstyled d-flex gap-1 m-0">
                 <li>
                     <a title="Ver detalles del empleado" 
-                    href="{{ route('myShow', $empleado->id) }}"
                     hx-get="{{ route('myShow', $empleado->id) }}"
+                    hx-trigger="click"
                     hx-target=".modal_container"
                     hx-swap="innerHTML"
                     class="btn btn-success rounded-circle d-flex align-items-center justify-content-center p-1"
@@ -31,6 +31,7 @@
                 <li>
                     <a href="#"
                     hx-get="{{ route('myEdit', $empleado->id) }}"
+                    hx-trigger="click"
                     hx-target=".modal_container"
                     hx-swap="innerHTML"
                     class="btn btn-primary rounded-circle d-flex align-items-center justify-content-center p-1"
@@ -43,6 +44,7 @@
                             class="btn btn-danger rounded-circle d-flex align-items-center justify-content-center p-1"
                             hx-get="{{ route('empleados.confirm-delete', $empleado->id) }}"
                             hx-target=".modal_container"
+                            hx-trigger="click"
                             hx-swap="innerHTML"
                             title="Eliminar empleado"
                             style="width: 36px; height: 36px;">
