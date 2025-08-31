@@ -12,16 +12,12 @@
 </head>
 
 <body>
-    <h1 class="text-center fw-bold opacity-75">
-        Desarrollo Full-Stack: 
-    </h1>
-    <h2 class="text-center fw-bold mb-4 opacity-75">
-        CRUD Moderno con Laravel, HTMX, Bootstrap 5 y MySQL
-    </h2>
+    @include('layouts.navbar')
+
     <!-- Modal Container -->
     <div class="modal_container"></div>
     
-    <div class="container">        
+    <div class="container mt-5">        
         <div class="row justify-content-md-center">
             <div class="col-md-4" style="border-right: 1px solid #dee2e6;">
                 <h3 class="text-center opacity-75">Registrar empleado <hr></h3>
@@ -45,6 +41,8 @@
     <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.6/dist/htmx.min.js" integrity="sha384-Akqfrbj/HpNVo8k11SXBb6TlBWmXXlYQrCSqEWmyKJe+hDm3Z/B2WVG4smwBkRVm" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/nextjs-toast-notify@1.47.0/dist/nextjs-toast-notify.js"></script>
+    <!-- Manejador unificado de modales -->
+    <script src="{{ asset('js/modal-handler.js') }}"></script>
     <script>
         // Sistema simple de notificaciones para HTMX
         document.body.addEventListener('showAlert', function(evt) {

@@ -106,29 +106,3 @@
         </div>
     </div>
 </div>
-
-<script>
-(function() {
-    // Mostrar la modal automáticamente
-    const modal = document.getElementById('empleadoEditModal');
-    if (modal) {
-        const bootstrapModal = new bootstrap.Modal(modal);
-        bootstrapModal.show();
-        
-        // Limpiar el contenedor cuando se cierre la modal
-        modal.addEventListener('hidden.bs.modal', function() {
-            document.querySelector('.modal_container').innerHTML = '';
-        });
-    }
-    
-    // Escuchar el evento para cerrar la modal después de actualizar
-    document.body.addEventListener('closeModal', function(evt) {
-        if (evt.detail.value === 'empleadoEditModal') {
-            var modal = bootstrap.Modal.getInstance(document.getElementById('empleadoEditModal'));
-            if (modal) {
-                modal.hide();
-            }
-        }
-    });
-})();
-</script>

@@ -16,33 +16,36 @@
                         @endif
                     </td>
                     <td>
-                         <ul class="flex_acciones">
+                         <ul class="flex_acciones list-unstyled d-flex gap-1 m-0">
                             <li>
                                 <a title="Ver detalles del empleado" 
-                                   href="{{ route('myShow', $empleado->id)}}"
-                                   hx-get="{{ route('myShow', $empleado->id)}}"
-                                   hx-target=".modal_container"
-                                   hx-swap="innerHTML"
-                                   class="btn btn-success">
-                                   <i class="bi bi-binoculars"></i>
+                                href="{{ route('myShow', $empleado->id) }}"
+                                hx-get="{{ route('myShow', $empleado->id) }}"
+                                hx-target=".modal_container"
+                                hx-swap="innerHTML"
+                                class="btn btn-success rounded-circle d-flex align-items-center justify-content-center p-1"
+                                style="width: 36px; height: 36px;">
+                                <i class="bi bi-binoculars"></i>
                                 </a>
                             </li>
                             <li>
                                 <a href="#"
-                                   hx-get="{{ route('myEdit', $empleado->id) }}"
-                                   hx-target=".modal_container"
-                                   hx-swap="innerHTML"
-                                   class="btn btn-primary">
-                                   <i class="bi bi-pencil-square"></i>
-                                </a>   
+                                hx-get="{{ route('myEdit', $empleado->id) }}"
+                                hx-target=".modal_container"
+                                hx-swap="innerHTML"
+                                class="btn btn-primary rounded-circle d-flex align-items-center justify-content-center p-1"
+                                style="width: 36px; height: 36px;">
+                                <i class="bi bi-pencil-square"></i>
+                                </a>
                             </li>
                             <li>
                                 <button type="button" 
-                                        class="btn btn-danger"
+                                        class="btn btn-danger rounded-circle d-flex align-items-center justify-content-center p-1"
                                         hx-get="{{ route('empleados.confirm-delete', $empleado->id) }}"
                                         hx-target=".modal_container"
                                         hx-swap="innerHTML"
-                                        title="Eliminar empleado">
+                                        title="Eliminar empleado"
+                                        style="width: 36px; height: 36px;">
                                     <i class="bi bi-trash"></i>
                                 </button>
                             </li>

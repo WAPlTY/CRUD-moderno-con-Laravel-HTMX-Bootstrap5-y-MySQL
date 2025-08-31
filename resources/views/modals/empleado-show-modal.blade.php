@@ -50,19 +50,3 @@
         </div>
     </div>
 </div>
-
-<script>
-// Mostrar la modal automáticamente cuando se carga
-(function() {
-    const modal = document.getElementById('empleadoModal');
-    if (modal) {
-        const bootstrapModal = new bootstrap.Modal(modal);
-        bootstrapModal.show();
-        
-        // Limpiar la modal del DOM cuando se cierre
-        modal.addEventListener('hidden.bs.modal', function() {
-            document.querySelector('.modal_container').innerHTML = '';
-        });
-    }
-})();
-</script>
