@@ -1,4 +1,13 @@
-<form  action="{{ route('myStore') }}" method="POST" enctype="multipart/form-data">
+<form action="{{ route('myStore') }}" method="POST" enctype="multipart/form-data"
+          hx-post="{{ route('myStore') }}"
+          hx-target="#empleados-table tbody"
+          hx-encoding="multipart/form-data"
+          hx-on::after-request="
+              if(event.detail.successful){
+                  document.getElementById('form-empleado').reset();
+              }
+          "
+          id="form-empleado">
     {{ csrf_field() }}
     <div class="mb-3">
         <label class="form-label">Nombre</label>
@@ -69,8 +78,30 @@
 
     <div class="d-grid gap-2">
         <button type="submit" class="btn btn-primary btn_add">
+            <span class="htmx-indicator spinner-border spinner-border-sm me-2" role="status" aria-hidden="true" style="display: none;"></span>
             Registrar Empleado
         </button>
-
     </div>
 </form>
+
+<script>
+    // Limpiar formulario después de envío exitoso
+    document.body.addEventListener('htmx:afterSwap', function(evt) {
+        if (evt.detail.target.id === 'empleados-table') {
+            document.getElementById('form-empleado').reset();
+        }
+    });
+    
+    // Mostrar indicador de carga
+    document.body.addEventListener('htmx:beforeRequest', function(evt) {
+        if (evt.detail.elt.id === 'form-empleado') {
+            evt.detail.elt.querySelector('.htmx-indicator').style.display = 'inline-block';
+        }
+    });
+    
+    document.body.addEventListener('htmx:afterRequest', function(evt) {
+        if (evt.detail.elt.id === 'form-empleado') {
+            evt.detail.elt.querySelector('.htmx-indicator').style.display = 'none';
+        }
+    });
+</script>
