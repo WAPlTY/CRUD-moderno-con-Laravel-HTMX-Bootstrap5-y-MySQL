@@ -10,9 +10,9 @@
                         <!--
                         El helper asset generará la URL completa a la carpeta de avatares, asegurando que las imágenes se carguen correctamente independientemente de la ruta en la que te encuentres dentro de tu aplicación Laravel.
                         -->
-                        <img src="{{ asset('avatars/' . $empleado->avatar) }}" alt="Avatar" width="50" height="50" />
+                        <img class="rounded-circle" src="{{ asset('avatars/' . $empleado->avatar) }}" alt="{{ $empleado->nombre }}" width="50" height="50" loading="lazy" />
                         @else
-                        <img src="https://www.drmarket.com.mx/Archivos/Anuncios/sinImagenDefault.jpg" alt="Avatar" width="50" height="50" />
+                        <img class="rounded-circle" src="{{ asset('imgs/sin-foto.png') }}" alt="{{ $empleado->nombre }}" width="50" height="50" loading="lazy" />
                         @endif
                     </td>
                     <td>
@@ -28,8 +28,8 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('myEdit', $empleado->id) }}"
-                                   hx-get="{{ route('empleados.show', $empleado->id) }}"
+                                <a href="#"
+                                   hx-get="{{ route('myEdit', $empleado->id) }}"
                                    hx-target=".modal_container"
                                    hx-swap="innerHTML"
                                    class="btn btn-primary">

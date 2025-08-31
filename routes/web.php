@@ -10,4 +10,5 @@ Route::get('/empleado/show/{id}', [EmpleadosController::class, 'show'])->name('m
 Route::delete('/empleado/delete/{id}', [EmpleadosController::class, 'destroy'])->name('myDestroy');
 Route::get('/empleado/edit/{id}', [EmpleadosController::class, 'edit'])->name('myEdit');
 Route::put('/empleado/update/{id}', [EmpleadosController::class, 'update'])->name('myUpdate');
+Route::post('/empleado/update/{id}', [EmpleadosController::class, 'update']);
 Route::get('/empleado/confirm-delete/{id}', [EmpleadosController::class, 'confirmDelete'])->name('empleados.confirm-delete');

@@ -65,9 +65,9 @@ class EmpleadosController extends Controller
     {
         $empleado = Empleados::findOrFail($idEmpleado);
         
-        // Si es una petición HTMX, retornar solo el formulario
+        // Si es una petición HTMX, retornar la modal de edición
         if ($request->header('HX-Request')) {
-            return view('empleados.edit-form', compact('empleado'));
+            return view('modals.empleado-edit-modal', compact('empleado'));
         }
         
         return view('empleados.edit', compact('empleado'));
@@ -78,6 +78,17 @@ class EmpleadosController extends Controller
      */
     public function update(Request $request, $idEmpleado)
     {
+        // Validar los datos del formulario
+        $request->validate([
+            'nombre' => 'required|string|max:255',
+            'cedula' => 'required|string|max:255',
+            'edad' => 'required|integer|min:18|max:50',
+            'sexo' => 'required|in:Masculino,Femenino',
+            'telefono' => 'required|string|max:255',
+            'cargo' => 'required|string|max:255',
+            'avatar' => 'nullable|image|mimes:jpeg,png|max:2048'
+        ]);
+
         $datoEmpleado = Empleados::findOrFail($idEmpleado);
 
         // Verificar si se adjuntó un nuevo archivo de imagen
@@ -108,7 +119,10 @@ class EmpleadosController extends Controller
             $empleados = Empleados::all();
             return response()
                 ->view('empleados.table-rows', compact('empleados'))
-                ->header('HX-Trigger', json_encode(['showAlert' => 'Empleado actualizado exitosamente.']));
+                ->header('HX-Trigger', json_encode([
+                    'showAlert' => 'Empleado actualizado exitosamente.',
+                    'closeModal' => 'empleadoEditModal'
+                ]));
         }
 
         return redirect()->route('home')->with('success', 'Empleado actualizado exitosamente.');
