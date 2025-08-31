@@ -1,4 +1,4 @@
-<form action="{{ route('myStore') }}"
+<form 
     hx-post="{{ route('myStore') }}"
     hx-target="#empleados-table tbody"
     hx-encoding="multipart/form-data"

@@ -14,7 +14,6 @@
                       hx-swap="innerHTML"
                       hx-headers='{"X-CSRF-TOKEN": "{{ csrf_token() }}"}'
                       enctype="multipart/form-data">
-                    @csrf
                     @method('PUT')
 
                     <div class="row">
