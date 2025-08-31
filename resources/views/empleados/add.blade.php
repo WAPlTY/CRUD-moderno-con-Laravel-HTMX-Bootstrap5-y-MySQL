@@ -1,14 +1,15 @@
-<form action="{{ route('myStore') }}" method="POST" enctype="multipart/form-data"
-          hx-post="{{ route('myStore') }}"
-          hx-target="#empleados-table tbody"
-          hx-encoding="multipart/form-data"
-          hx-on::after-request="
-              if(event.detail.successful){
-                  document.getElementById('form-empleado').reset();
-              }
-          "
-          id="form-empleado">
-    {{ csrf_field() }}
+<form action="{{ route('myStore') }}"
+    hx-post="{{ route('myStore') }}"
+    hx-target="#empleados-table tbody"
+    hx-encoding="multipart/form-data"
+    hx-on::after-request="
+        if(event.detail.successful){
+            document.getElementById('form-empleado').reset();
+        }
+    "
+    hx-headers='{"X-CSRF-TOKEN": "{{ csrf_token() }}"}'
+    id="form-empleado">
+    
     <div class="mb-3">
         <label class="form-label">Nombre</label>
         <input type="text" name="nombre" class="form-control" required />

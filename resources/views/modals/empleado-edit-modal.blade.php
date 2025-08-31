@@ -1,3 +1,4 @@
+<!-- Modal de Editar un empleado -->
 <div class="modal fade" id="empleadoEditModal" tabindex="-1" aria-labelledby="empleadoEditModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">

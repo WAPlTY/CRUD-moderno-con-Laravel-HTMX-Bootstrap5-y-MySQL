@@ -1,4 +1,4 @@
-<!-- Modal completa para mostrar detalles del empleado -->
+<!-- Modal para mostrar detalles del empleado -->
 <div class="modal fade" id="empleadoModal" tabindex="-1" aria-labelledby="empleadoModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">

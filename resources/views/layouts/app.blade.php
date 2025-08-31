@@ -53,7 +53,6 @@
                 duration: 5000,
                 position: "top-right",
                 transition: "bounceIn",
-                icon: "",
                 sound: true,
             });
         });
