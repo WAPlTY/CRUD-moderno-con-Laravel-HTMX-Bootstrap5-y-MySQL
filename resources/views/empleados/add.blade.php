@@ -84,25 +84,3 @@
         </button>
     </div>
 </form>
-
-<script>
-    // Limpiar formulario después de envío exitoso
-    document.body.addEventListener('htmx:afterSwap', function(evt) {
-        if (evt.detail.target.id === 'empleados-table') {
-            document.getElementById('form-empleado').reset();
-        }
-    });
-    
-    // Mostrar indicador de carga
-    document.body.addEventListener('htmx:beforeRequest', function(evt) {
-        if (evt.detail.elt.id === 'form-empleado') {
-            evt.detail.elt.querySelector('.htmx-indicator').style.display = 'inline-block';
-        }
-    });
-    
-    document.body.addEventListener('htmx:afterRequest', function(evt) {
-        if (evt.detail.elt.id === 'form-empleado') {
-            evt.detail.elt.querySelector('.htmx-indicator').style.display = 'none';
-        }
-    });
-</script>
